@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "717313558435",
+    "firebase_url": "https://learnux-kotlin.firebaseio.com",
+    "project_id": "learnux-kotlin",
+    "storage_bucket": "learnux-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717313558435:android:d787f270d82fd79f",
+        "android_client_info": {
+          "package_name": "com.example.jovel.learnux_kotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717313558435-2lte217u8dtf8vh3br4bl4557qoj4kpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgVc2jD32W5cN4H-wVT4x2LtuS6TnU7aA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
