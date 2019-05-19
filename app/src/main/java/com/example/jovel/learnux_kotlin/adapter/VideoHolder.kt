@@ -17,11 +17,9 @@ class VideoHolder(view: View) : RecyclerView.ViewHolder(view){
     private var mTitleTV: TextView? = null
     private var mDescriptionTV: TextView? = null
     private var mDurationTV: TextView? = null
-    private var mFrame: RelativeLayout? = null
 
 
     fun bindVideo(video: Video, onVideoClickListener: OnVideoClickListener?){
-
         mThumbnailIV = itemView.findViewById(R.id.row_thumbnail)
         mTitleTV = itemView.findViewById(R.id.row_title)
         mDescriptionTV = itemView.findViewById(R.id.row_description)
@@ -31,13 +29,11 @@ class VideoHolder(view: View) : RecyclerView.ViewHolder(view){
         mDescriptionTV!!.text = video.description
         mDurationTV!!.text = video.duration
 
-        mFrame = itemView.findViewById(R.id.row_frame)
-
         Glide.with(mThumbnailIV!!.context)
                 .load(video.thumbnail)
                 .into(mThumbnailIV!!)
 
-        mFrame!!.setOnClickListener {
+        itemView!!.setOnClickListener {
             onVideoClickListener!!.onVideoClick(video)
         }
     }
