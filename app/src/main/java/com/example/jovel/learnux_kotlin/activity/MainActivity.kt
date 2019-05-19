@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(), OnVideoClickListener, OnVideoExitListe
 
         mVideos = ArrayList()
 
-        mDatabase = FirebaseDatabase.getInstance().getReference(Constants.ALL_VIDEOS)
+        mDatabase = FirebaseDatabase.getInstance().getReference(ALL_VIDEOS)
         getVideosFromFireDB()
 
         mVideoAdapter = VideoAdapter(mVideos as ArrayList<Video>, this)
@@ -148,42 +148,42 @@ class MainActivity : AppCompatActivity(), OnVideoClickListener, OnVideoExitListe
     private fun armFilterSwitches(navigationView: NavigationView) {
 
         mBasicsSwitch = navigationView.menu.getItem(0).actionView.findViewById(R.id.drawer_switch)
-        mBasicsSwitch!!.setChecked(mBasics)
+        mBasicsSwitch!!.isChecked = mBasics
         mBasicsSwitch!!.setOnCheckedChangeListener { _, isChecked ->
             mBasics = isChecked
-            mBasicsSwitch!!.setChecked(mBasics)
+            mBasicsSwitch!!.isChecked = mBasics
             getVideosFromFireDB()
         }
 
         mNetworkingSwitch = navigationView.menu.getItem(1).actionView.findViewById(R.id.drawer_switch)
-        mNetworkingSwitch!!.setChecked(mNetworking)
+        mNetworkingSwitch!!.isChecked = mNetworking
         mNetworkingSwitch!!.setOnCheckedChangeListener{_, isChecked ->
             mNetworking = isChecked
-            mNetworkingSwitch!!.setChecked(mNetworking)
+            mNetworkingSwitch!!.isChecked = mNetworking
             getVideosFromFireDB()
         }
 
         mSecuritySwitch = navigationView.menu.getItem(2).actionView.findViewById(R.id.drawer_switch)
-        mSecuritySwitch!!.setChecked(mSecurity)
+        mSecuritySwitch!!.isChecked = mSecurity
         mSecuritySwitch!!.setOnCheckedChangeListener{ _, isChecked ->
             mSecurity = isChecked
-            mSecuritySwitch!!.setChecked(mSecurity)
+            mSecuritySwitch!!.isChecked = mSecurity
             getVideosFromFireDB()
         }
 
         mStorageSwitch = navigationView.menu.getItem(3).actionView.findViewById(R.id.drawer_switch)
-        mStorageSwitch!!.setChecked(mStorage)
+        mStorageSwitch!!.isChecked = mStorage
         mStorageSwitch!!.setOnCheckedChangeListener{ _, isChecked ->
             mStorage = isChecked
-            mStorageSwitch!!.setChecked(mStorage)
+            mStorageSwitch!!.isChecked = mStorage
             getVideosFromFireDB()
         }
 
         mSystemSwitch = navigationView.menu.getItem(4).actionView.findViewById(R.id.drawer_switch)
-        mSystemSwitch!!.setChecked(mSystem)
+        mSystemSwitch!!.isChecked = mSystem
         mSystemSwitch!!.setOnCheckedChangeListener { _, isChecked ->
             mSystem = isChecked
-            mSystemSwitch!!.setChecked(mSystem)
+            mSystemSwitch!!.isChecked = mSystem
             getVideosFromFireDB()
         }
     }
@@ -221,7 +221,6 @@ class MainActivity : AppCompatActivity(), OnVideoClickListener, OnVideoExitListe
                 }
             }
         }
-
         return filteredContent
     }
 
